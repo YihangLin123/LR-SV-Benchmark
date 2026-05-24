@@ -6,7 +6,6 @@ import time
 import re
 
 def norm_chr(chrom):
-    """统一染色体命名：去掉 'chr' 前缀并返回（保持 None 安全）。"""
     if chrom is None:
         return chrom
     chrom = str(chrom)
@@ -15,7 +14,6 @@ def norm_chr(chrom):
     return chrom
 
 def pase_info(seq):
-    """从 INFO 字段提取常用键；支持 POS2（若有）、CHR2、END、SVLEN、SVTYPE、RE。"""
     info = {'SVLEN': 0, 'END': 0, 'POS2': 0, "SVTYPE": '', "RE": 0, "CHR2": ''}
     for item in seq.split(';'):
         if '=' not in item:
@@ -29,14 +27,11 @@ def pase_info(seq):
         elif k == "CHR2":
             info[k] = v
         elif k == "SVTYPE":
-            info[k] = v  # 取完整值，不截断
+            info[k] = v  
     return info
 
 def parse_bnd_alt(alt):
-    """
-    从 ALT 字段（如 N]3:76470743] 或 T]3:76470743] 等）提取 chr2, pos2, form。
-    如果解析失败，返回 (None, None, None)。
-    """
+   
     if not alt:
         return None, None, None
     m = re.search(r'([A-Za-z0-9_.]+):(\d+)', alt)
@@ -45,7 +40,6 @@ def parse_bnd_alt(alt):
     chr2 = m.group(1)
     pos2 = int(m.group(2))
 
-    # 简单判断 form：根据方括号在 ALT 中相对位置
     if '[' in alt and ']' not in alt:
         if alt.find('[') < alt.find(chr2):
             form = '[[N'
@@ -66,7 +60,7 @@ def parse_bnd_alt(alt):
     return chr2, pos2, form
 
 def safe_chr_cmp(a, b):
-    """尽量稳定地比较两个染色体名的顺序（用于决定哪端先写）。"""
+    
     try:
         ai = int(a)
         bi = int(b)
@@ -75,7 +69,7 @@ def safe_chr_cmp(a, b):
         return str(a) <= str(b)
 
 def phase_GT(sample_field, format_field):
-    """更稳健地从 FORMAT 和样本字段里提取 GT 并返回 'het'/'hom'/'unknown'"""
+    
     try:
         fmt = format_field.split(':')
         sample_vals = sample_field.split(':')
@@ -110,7 +104,6 @@ def load_callset(path, svtype_list):
                 continue
             info = pase_info(seq[7])
 
-            # 如果用户选择了 DUP 而调用方报告 DUP，转成 INS（保留你原来的逻辑）
             if len(svtype_list) == 3 and info['SVTYPE'] == "DUP":
                 info['SVTYPE'] = "INS"
 
@@ -120,7 +113,7 @@ def load_callset(path, svtype_list):
                 sample_field = seq[9] if len(seq) > 9 else ''
 
                 if info['SVTYPE'] == "BND":
-                    # 优先使用 INFO 中的 CHR2/POS2（如果存在），否则从 ALT 解析
+                    
                     chr2_info = info.get('CHR2') or None
                     pos2_info = info.get('POS2') or None
                     form = None
@@ -132,7 +125,7 @@ def load_callset(path, svtype_list):
                             pos2_info = pos2_info or pos2_alt
                             form = form_alt
 
-                    # 有些工具可能把对端放在 END 字段
+                    
                     if not pos2_info and info.get('END', 0) > 0:
                         pos2_info = info.get('END')
 
@@ -257,13 +250,7 @@ typetrans = {'insertion':'INS',
              }
 
 def load_ans(path, ntools=0):
-    """
-    读取 ground-truth bed（或自定义格式）。
-    为每条记录在末尾预留一定数量的 0 列以便写入不同工具的评估结果。
-    ntools 用于决定预留列数。
-    """
-    # 确定每行应当预留的列数：确保 indices 2+opt / 3+opt / 4+opt 都不会越界
-    # opt 最大为 ntools，因此需要至少 (4 + ntools + 1) 长度，取和原先 12 的最大值
+    
     min_cols = max(12, 5 + ntools)
     ansbed = dict()
     with open(path) as fh:
@@ -286,11 +273,11 @@ def load_ans(path, ntools=0):
                 ansbed[svtype] = list()
 
             if svtype == 'INS':
-                # 确保 seq[4] 存在；否则把长度设成 0
+                
                 inslen = len(seq[4]) if len(seq) > 4 else 0
                 ansbed[svtype].append([norm_chr(chr_raw), start, inslen] + [0]*min_cols)
             elif svtype == 'BND':
-                # 期望 seq[4] 中包含 chr:pos:... 的结构（原脚本的假设）
+                
                 parts = seq[4].split(':') if len(seq) > 4 else []
                 if len(parts) >= 3:
                     chr2 = parts[1]
@@ -298,14 +285,13 @@ def load_ans(path, ntools=0):
                     strand1 = parts[3] if len(parts) > 3 else 'f'
                     strand2 = parts[4] if len(parts) > 4 else 'f'
                 else:
-                    # 如果格式不对，跳过该条
+                    
                     continue
 
                 chr1n = norm_chr(chr_raw)
                 chr2n = norm_chr(chr2)
                 length = end - start
 
-                # 根据 strand 情况扩展多个表示（与原脚本行为一致）
                 if strand1[0] == 'f':
                     if strand2[0] == 'f':
                         ansbed[svtype].append([chr1n, start, chr2n, start2, "N[["] + [0]*min_cols)
@@ -325,7 +311,7 @@ def load_ans(path, ntools=0):
                         ansbed[svtype].append([chr1n, start, chr2n, start2+length, "N]]"] + [0]*min_cols)
                         ansbed[svtype].append([chr1n, end, chr2n, start2, "N]]"] + [0]*min_cols)
             else:
-                ansbed[svtype].append([norm_chr(chr_raw), start, end, end-start+1] + [0]*min_cols)  # DEL/INV/DUP
+                ansbed[svtype].append([norm_chr(chr_raw), start, end, end-start+1] + [0]*min_cols) 
     return ansbed
 
 def load_gt(path):
