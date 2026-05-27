@@ -60,7 +60,7 @@
 | Sample | DEL | INS | DUP | INV | BND | Source |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
 | **HG002 (Tier1)** | 4,199 | 5,442 | —— | —— | —— | [[available here](https://ftp.ncbi.nih.gov/giab/ftp/data/AshkenazimTrio/analysis/NIST_SVs_Integration_v0.6/)] & bed [[available here](https://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/analysis/NIST_SVs_Integration_v0.6/HG002_SVs_Tier1_v0.6.bed)] |
-| **HG002 (CMRG)** | \* | \* | \* | \* | \* | [[available here](https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/CMRG_v1.00/GRCh37/StructuralVariant/)] [^1] |
+| **HG002 (CMRG)** | \* | \* | \* | \* | \* | [[available here](https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/CMRG_v1.00/GRCh37/StructuralVariant/)] |
 | **CHM13** | 6,665 | 10,673 | —— | —— | —— | [[available here](https://github.com/ldenti/SVDSS-experiments/)] |
 | **SIM** | 6,979 | 9,668 | 3,348 | 42 | 368 | From CHM1 (nstd137) and KWS1 (nstd106) datasets |
 | **HCC1395** | 717 | 551 | 230 | 133 | 157 | [[available here](https://doi.org/10.1186/s13059-022-02816-6)] |
@@ -71,6 +71,7 @@
 ---
 
 > **Note\***: Unlike standard whole-genome datasets, the HG002-CMRG (Challenging Medically Relevant Genes) dataset utilizes fine-grained annotations based on genomic context (e.g., sequence contractions and simple INS/DELs). Due to the discrepancy between these specialized classification dimensions and standard DEL/INS categories, these values are not directly comparable to the other samples. 
+
 > **Appendix**: The SV composition of HG002-CMRG (total ≈ 235) includes:
 > * 66 DUP (Duplications)
 > * 57 SIMPLEINS (Simple Insertions)
