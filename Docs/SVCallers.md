@@ -1,4 +1,4 @@
-# Structural Variant callers
+# SVCallers
 
 | SV callers | Version | SV types | Target | Release year |
 | :--- | :---: | :--- | :---: | :---: |
