@@ -3,9 +3,11 @@
 ## Contents
 1. [Introduction](#introduction)
 2. [Datasets](./Docs/Datasets.md)
-3. [SV callers](./Docs/SVcallers.md)
-4. SV evaluators
-5. [Data availability](#data-availability)
+3. [SV Eallers](./Docs/SVCallers.md)
+4. [SV Evaluators](./Docs/SVEvaluators.md)
+5. [Other Tools](./Docs/OtherTools.md)
+6. [Detailed running command]
+7. [Data availability](#data-availability)
 
 ## Introduction
 
