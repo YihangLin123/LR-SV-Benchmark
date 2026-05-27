@@ -5,7 +5,7 @@
 2. [Datasets](./Docs/Datasets.md)
 3. [SV Eallers](./Docs/SVCallers.md)
 4. [SV Evaluators](./Docs/SVEvaluators.md)
-5. [Detailed running command]
+5. [Detailed running command](./Docs/Command.md)
 6. [Data availability](#data-availability)
 
 ## Introduction
