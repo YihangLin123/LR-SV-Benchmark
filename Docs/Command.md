@@ -1,18 +1,12 @@
 # Complete SV Analysis Pipeline Command Manual
 
 ## Table of Contents
-
-1. [SV Simulate](https://www.doubao.cn)
-
-2. [Read Alignment](https://www.doubao.cn)
-
-3. [Downsample Alignment File](https://www.doubao.cn)
-
-4. [SV Call](https://www.doubao.cn)
-
-5. [Somatic SV Filtering Strategies](https://www.doubao.cn)
-
-6. [SV Evaluation](https://www.doubao.cn)
+1. [SV Simulate](#1-sv-simulate)
+2. [Read Alignment](#2-read-alignment)
+3. [Downsample Alignment File]((#3-downsample-alignment-file))
+4. [SV Callers](#4-sv-call)
+5. [Somatic SV Filtering Strategies](#5-somatic-sv-filtering-strategies)
+6. [SV Evaluation](#6-sv-evaluation)
 
 ## 1\. SV Simulate
 
@@ -128,7 +122,7 @@ samtools view -h -s 0.66 test.bam | samtools view -bS > Downsample_test.bam
 
 ---
 
-## 4\. SV Call
+## 4\. SV Callers
 
 ### Tool List \&amp; Versions
 
