@@ -2,7 +2,7 @@
 
 ## Contents
 1. [Introduction](#introduction)
-2. Datasets
+2. [Datasets](./Docs/Datasets.md)
 3. SV callers
 4. SV evaluators
 5. [Data availability](#data-availability)
