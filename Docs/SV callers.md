@@ -1,8 +1,6 @@
 # Structural Variant callers
 
-## Summary Table
-
-| SV Callers | Version | SV Types | Target | Release Year |
+| SV callers | Version | SV types | Target | Release year |
 | :--- | :---: | :--- | :---: | :---: |
 | **[Delly2](https://github.com/dellytools/delly)** | 1.5.0 | DEL, INS, DUP, INV, TRA | Both | 2012 |
 | **[SVIM](https://github.com/eldariont/svim)** | 2.0.0 | DEL, INS, DUP, INV, BND, DUP:TANDEM, DUP:INT | Germline | 2019 |
