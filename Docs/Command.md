@@ -1,8 +1,15 @@
 # Detailed running command
 
+## Contents
+1. [SV Simulation]
+2. Read Alignment
+
+## 1. SV Simulation
+
 ## 1. SV Simulation
 
 ### Germline (VISOR v1.1.2)
+
 ```bash
 # 1. Genome modification (HACk)
 VISOR HACk -g reference_genome.fa -b sim_del.bed -o donor_genome_del
@@ -14,15 +21,19 @@ VISOR HACk -g reference_genome.fa -b sim_tra.bed -o donor_genome_tra
 # 2. In silico Sequencing (LASeR)
 # PacBio CLR 
 VISOR LASeR -g reference_genome.fa -s donor_genome_del -b LASeR.bed -o data_clr_del_30x --coverage 30 --threads 32 --read_type pacbio --error_model pacbio2016 --qscore_model pacbio2016 --tag
+
 # PacBio CCS 
 VISOR LASeR -g reference_genome.fa -s donor_genome_del -b LASeR.bed -o data_ccs_del_30x --coverage 30 --threads 32 --read_type pacbio --error_model pacbio2021 --qscore_model pacbio2021 --tag
+
 # Oxford Nanopore (ONT)
 VISOR LASeR -g reference_genome.fa -s donor_genome_del -b LASeR.bed -o data_ont_del_30x --coverage 30 --threads 32 --read_type nanopore --error_model nanopore2023 --qscore_model nanopore2023 --tag
-
 Somatic (hapdiff v0.9 & Samtools)
-# Generate synthetic heterozygous tumor genome
+Bash
+
+
+# 1. Generate synthetic heterozygous tumor genome
 python hapdiff.py --reference reference_genome.fa --pat test1.fasta --mat test2.fasta --out-dir output --threads 32
 
-# Merge baseline files to create an in silico tumor-normal mixture
+# 2. Merge baseline files to create an in silico tumor-normal mixture
 samtools merge -@ 32 CHM1_CHM13_Tumor.bam CHM1.bam CHM13.bam
 
