@@ -446,4 +446,3 @@ truvari bench -f reference_genome.fa -b ./HG002_SVs_Tier1_v0.6.vcf.gz -o tool_ev
 python minda.py truthset --base truth.vcf --vcfs caller_vcf --min_size 50 --tolerance 500 --out_dir output
 ```
 
-> （注：文档部分内容可能由 AI 生成）
