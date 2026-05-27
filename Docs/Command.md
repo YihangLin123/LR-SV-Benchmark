@@ -18,7 +18,6 @@ VISOR LASeR -g reference_genome.fa -s donor_genome_del -b LASeR.bed -o data_clr_
 VISOR LASeR -g reference_genome.fa -s donor_genome_del -b LASeR.bed -o data_ccs_del_30x --coverage 30 --threads 32 --read_type pacbio --error_model pacbio2021 --qscore_model pacbio2021 --tag
 # Oxford Nanopore (ONT)
 VISOR LASeR -g reference_genome.fa -s donor_genome_del -b LASeR.bed -o data_ont_del_30x --coverage 30 --threads 32 --read_type nanopore --error_model nanopore2023 --qscore_model nanopore2023 --tag
-```bash
 
 ### Somatic (hapdiff v0.9)
 ```bash
@@ -27,4 +26,4 @@ python hapdiff.py --reference reference_genome.fa --pat test1.fasta --mat test2.
 
 # Merge baseline files to create an in silico tumor-normal mixture
 samtools merge -@ 32 CHM1_CHM13_Tumor.bam CHM1.bam CHM13.bam
-```bash
+
