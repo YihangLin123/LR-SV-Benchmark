@@ -33,8 +33,8 @@
 | | CCS | 33× | [available here](https://github.com/marbl/CHM13) |
 | | ONT | 123× | [available here](https://github.com/marbl/CHM13) |
 | **SIM** | CLR | 30× | [VISOR](https://github.com/davidebolo1993/VISOR) |
-| | CCS | 30× | Simulated |
-| | ONT | 30× | Simulated |
+| | CCS | 30× | [VISOR](https://github.com/davidebolo1993/VISOR) |
+| | ONT | 30× | [VISOR](https://github.com/davidebolo1993/VISOR) |
 
 ## 2. Somatic
 
@@ -43,9 +43,9 @@
 | **HCC1395** | Tumor | CCS | 62× | [available here](https://downloads.pacbcloud.com/public/revio/2023Q2/HCC1395/HCC1395/) |
 | | | ONT | 19× | [available here](http://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/seqc/Somatic_Mutation_WG) |
 | | Normal | CCS | 43× | [available here](https://downloads.pacbcloud.com/public/revio/2023Q2/HCC1395/HCC1395-BL/) |
-| | | ONT | 12× | SEQC2, [available here](http://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/seqc/Somatic_Mutation_WG) |
+| | | ONT | 12× | [available here](http://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/seqc/Somatic_Mutation_WG) |
 | **COLO829** | Tumor | CCS | 66× | [available here](https://downloads.pacbcloud.com/public/revio/2024Q4/WGS/COLO829/COLO829/) |
-| | | ONT | 49× | ONT EPI2ME, [available here](https://epi2me.nanoporetech.com/colo-2024.03) |
+| | | ONT | 49× | [available here](https://epi2me.nanoporetech.com/colo-2024.03) |
 | | Normal | CCS | 67× | [available here](https://downloads.pacbcloud.com/public/revio/2024Q4/WGS/COLO829/COLO829BL/) |
 | | | ONT | 46× | [available here](https://epi2me.nanoporetech.com/colo-2024.03) |
 | **HG008** | Tumor | CCS | 84× | [available here](https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data_somatic/HG008/Liss_lab/PacBio_Revio_20240125/) |
