@@ -19,8 +19,7 @@ VISOR LASeR -g reference_genome.fa -s donor_genome_del -b LASeR.bed -o data_ccs_
 # Oxford Nanopore (ONT)
 VISOR LASeR -g reference_genome.fa -s donor_genome_del -b LASeR.bed -o data_ont_del_30x --coverage 30 --threads 32 --read_type nanopore --error_model nanopore2023 --qscore_model nanopore2023 --tag
 
-### Somatic (hapdiff v0.9)
-```bash
+Somatic (hapdiff v0.9 & Samtools)
 # Generate synthetic heterozygous tumor genome
 python hapdiff.py --reference reference_genome.fa --pat test1.fasta --mat test2.fasta --out-dir output --threads 32
 
