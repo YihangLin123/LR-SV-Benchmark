@@ -1,9 +1,11 @@
 # LR-SV-Benchmark
 
 ## Contents
-1. [Introduction](#1-introduction)
+1. [Introduction](#introduction)
 2. Datasets
-3.
+3. SV callers
+4. SV evaluators
+5. [Data availability](#data-availability)
 
 ## Introduction
 
