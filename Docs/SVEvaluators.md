@@ -1,4 +1,4 @@
-# Structural Variant Evaluators
+# SV Evaluators
 
 This document details the evaluation tools used in this project to benchmark and validate structural variant (SV) calling performance across germline and somatic datasets.
 
