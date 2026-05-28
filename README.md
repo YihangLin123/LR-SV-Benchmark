@@ -5,8 +5,8 @@
 2. [Datasets](./Docs/Datasets.md)
 3. [SV Eallers](./Docs/SVCallers.md)
 4. [SV Evaluators](./Docs/SVEvaluators.md)
-5. [Detailed running command](./Docs/Command.md)
-6. [Data availability](#data-availability)
+5. [Detailed Running Command](./Docs/Command.md)
+6. [Data Availability](#data-availability)
 
 ## Introduction
 
@@ -23,4 +23,5 @@ This comprehensive framework provides reliable recommendations for tool selectio
   <img src="./Docs/Fig%201.png" alt="Overall Evaluation Workflow" width="80%">
 </p>
 
-## Data availability
+## Data Availability
+All SV callsets for the benchmarking tools evaluated in this study can be found here
