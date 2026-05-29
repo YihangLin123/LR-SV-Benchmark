@@ -11,3 +11,5 @@ The benchmark VCFs and high confidence BED file are provided [here](./Datasets.m
 ## 2. Somatic Evaluation
 
 * **[Minda](https://github.com/KolmogorovLab/minda)** `(v0.0.2)`
+
+Detailed running commands are available [here](Command.md).
