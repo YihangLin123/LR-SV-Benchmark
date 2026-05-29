@@ -17,6 +17,8 @@
 | **[SAVANA](https://github.com/cortes-ciriano-lab/savana)** | 1.6.0 | DEL, INS, DUP, INV, BND, SCNA | Somatic | 2025 |
 | **[Severus](https://github.com/KolmogorovLab/Severus)** | 1.6.0 | DEL, INS, DUP, INV, BND | Both | 2026 |
 
+Detailed running commands are available [here](Command.md).
+
 ---
 
 ## Acronyms & Abbreviations
