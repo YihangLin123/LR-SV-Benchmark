@@ -60,7 +60,7 @@ samtools merge -@ 32 CHM1_CHM13_Tumor.bam CHM1.bam CHM13.bam
 
 ### Tool Versions
 
-minimap2 \(v2\.30\), pbmm2 \(v1\.17\.0\), NGMLR \(v0\.2\.7\), samtools \(v1\.22\.1\)
+minimap2 \(v2\.30\), pbmm2 \(v26\.1\.99\), NGMLR \(v0\.2\.7\), samtools \(v1\.22\.1\)
 
 ### 2\.1 minimap2 Alignment
 
