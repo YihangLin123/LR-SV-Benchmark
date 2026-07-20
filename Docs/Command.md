@@ -84,8 +84,6 @@ samtools index test.bam
 pbmm2 align reference_genome.fa test.fastq test.bam --preset SUBREAD --rg '@RG\tID:sampleId\tSM:sampleId'
 # CCS preset alignment
 pbmm2 align reference_genome.fa test.fastq test.bam --preset CCS --rg '@RG\tID:sampleId\tSM:sampleId'
-# ONT alignment with CCS preset
-pbmm2 align reference_genome.fa test.fastq test.bam --preset CCS --rg '@RG\tID:sampleId\tSM:sampleId'
 
 # Standard sorting and indexing
 samtools view -@ 32 -u test.sam | samtools sort -@ 32 -T test.bam.sort-tmp > test.bam
