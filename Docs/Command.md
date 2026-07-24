@@ -273,16 +273,16 @@ nanovar -x ont -c min_supporting_reads -t 16 -l 50 normal.bam reference_genome.f
 #### Germline SV Calling
 
 ```bash
-python SVision -o output -b test.bam -m ./svision_model/svision-cnn-model.ckpt -g reference_genome.fa -n test -s min_supporting_reads -t 16
+python SVision -o output -b test.bam -m ./svision_model/svision-cnn-model.ckpt -g reference_genome.fa -n test -s min_supporting_reads --min_sv_size 30 -t 16
 ```
 
 #### Somatic SV Calling
 
 ```bash
 # Tumor sample
-python SVision -o tumor_output -b tumor.bam -m ./svision_model/svision-cnn-model.ckpt -g reference_genome.fa -n tumor -s min_supporting_reads -t 16
+python SVision -o tumor_output -b tumor.bam -m ./svision_model/svision-cnn-model.ckpt -g reference_genome.fa -n tumor -s min_supporting_reads --min_sv_size 50 -t 16
 # Normal control sample
-python SVision -o normal_output -b normal.bam -m ./svision_model/svision-cnn-model.ckpt -g reference_genome.fa -n normal -s min_supporting_reads -t 16
+python SVision -o normal_output -b normal.bam -m ./svision_model/svision-cnn-model.ckpt -g reference_genome.fa -n normal -s min_supporting_reads --min_sv_size 50 -t 16
 ```
 
 ### 4\.9 SVision\-pro
@@ -291,20 +291,21 @@ python SVision -o normal_output -b normal.bam -m ./svision_model/svision-cnn-mod
 
 ```bash
 # CLR mode
-python SVision-pro --target_path test.bam --genome_path reference_genome.fa --model_path ./src/pre_process/model_liteunet_256_8_16_32_32_32.pth --sample test --out_path output --detect_mode germline --process_num 16 --preset error-prone --min_supp min_supporting_reads
+python SVision-pro --target_path test.bam --genome_path reference_genome.fa --model_path ./src/pre_process/model_liteunet_256_8_16_32_32_32.pth --sample test --out_path output --detect_mode germline --process_num 16 --preset error-prone --min_supp min_supporting_reads --min_sv_size 30
 # CCS mode
-python SVision-pro --target_path test.bam --genome_path reference_genome.fa --model_path ./src/pre_process/model_liteunet_256_8_16_32_32_32.pth --sample test --out_path output --detect_mode germline --process_num 16 --preset hifi --min_supp min_supporting_reads
+python SVision-pro --target_path test.bam --genome_path reference_genome.fa --model_path ./src/pre_process/model_liteunet_256_8_16_32_32_32.pth --sample test --out_path output --detect_mode germline --process_num 16 --preset hifi --min_supp min_supporting_reads --min_sv_size 30
 # ONT mode
-python SVision-pro --target_path test.bam --genome_path reference_genome.fa --model_path ./src/pre_process/model_liteunet_256_8_16_32_32_32.pth --sample test --out_path output --detect_mode germline --process_num 16 --preset error-prone --min_supp min_supporting_reads
+python SVision-pro --target_path test.bam --genome_path reference_genome.fa --model_path ./src/pre_process/model_liteunet_256_8_16_32_32_32.pth --sample test --out_path output --detect_mode germline --process_num 16 --preset error-prone --min_supp min_supporting_reads --min_sv_size 30
 ```
 
 #### Somatic SV Calling
 
 ```bash
 # CCS mode
-python SVision-pro --target_path tumor.bam --base_path normal.bam --model_path ./src/pre_process/model_liteunet_256_8_16_32_32_32.pth --out_path somatic_ouput --genome_path reference_genome.fa --sample_name somatic --preset hifi --process 16 --detect_mode somatic --min_supp min_supporting_reads
+python SVision-pro --target_path tumor.bam --base_path normal.bam --model_path ./src/pre_process/model_liteunet_256_8_16_32_32_32.pth --out_path somatic_ouput --genome_path reference_genome.fa --sample_name somatic --preset hifi --process 16 --detect_mode somatic --min_supp min_supporting_reads --min_sv_size 50
 # ONT mode
-python SVision-pro --target_path tumor.bam --base_path normal.bam --model_path ./src/pre_process/model_liteunet_256_8_16_32_32_32.pth --out_path somatic_ouput --genome_path reference_genome.fa --sample_name somatic --preset error-prone --process 16 --detect_mode somatic --min_supp min_supporting_reads
+python SVision-pro --target_path tumor.bam --base_path normal.bam --model_path ./src/pre_process/model_liteunet_256_8_16_32_32_32.pth --out_path somatic_ouput --genome_path reference_genome.fa --sample_name somatic --preset error-prone --process 16 --detect_mode somatic --min_supp min_supporting_reads --min_sv_size 50
+python extract_op.py --input_vcf /path/to/svision_pro.vcf --extract somatic
 ```
 
 ### 4\.10 Dysgu
