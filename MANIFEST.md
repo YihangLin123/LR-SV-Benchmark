@@ -7,10 +7,9 @@
 | **Aligner** | • minimap2 (v2.30.0): https://github.com/lh3/minimap2<br>• pbmm2 (v26.1.99): https://github.com/PacificBiosciences/pbmm2<br>• ngmlr (v0.2.7): https://github.com/philres/ngmlr<br>*(Aligners for each dataset are available in Supplementary Table S4)* |
 | **BAM file** | All BAM files are available in Supplementary Table S2 |
 | **Caller version** | Detailed information for all callers, including versions and corresponding links, is available in Supplementary Table S1. |
-| **Caller command** | Detailed running commands for all callers are available in Supplementary Note 6 and the GitHub repository at [https://github.com/YihangLin123/LR-SV-Benchmark](https://github.com/YihangLin123/LR-SV-Benchmark). |
-| **Raw VCF** | The raw VCF files output by all callers are available in the GitHub repository at [https://github.com/YihangLin123/LR-SV-Benchmark](https://github.com/YihangLin123/LR-SV-Benchmark). |
-| **Filtered VCF** | All filtered VCF files are available in the GitHub repository at [https://github.com/YihangLin123/LR-SV-Benchmark](https://github.com/YihangLin123/LR-SV-Benchmark). |
+| **Caller command** | Detailed running commands for all callers are available in Supplementary Note 6 and the GitHub repository at [https://github.com/model-lab/LR-SV-Benchmark](https://github.com/model-lab/LR-SV-Benchmark). |
+| **Raw VCF** | The raw VCF files output by all callers are available in the GitHub repository at [https://github.com/model-lab/LR-SV-Benchmark](https://github.com/model-lab/LR-SV-Benchmark). |
+| **Filtered VCF** | All filtered VCF files are available in the GitHub repository at [https://github.com/model-lab/LR-SV-Benchmark](https://github.com/model-lab/LR-SV-Benchmark). |
 | **Ground truth** | All ground truth datasets are available in Supplementary Table S3. |
 | **Benchmark tool and script** | • Truvari (v5.4.0): https://github.com/ACEnglish/truvari<br>• Minda (v0.0.2): https://github.com/KolmogorovLab/minda<br>*(All evaluation scripts are available in the GitHub repository)* |
 | **Benchmark command** | Detailed running commands are available in Supplementary Note 6 and the GitHub repository. |
-| **Final metric table** | All benchmarking results in this study are detailed in Supplementary Table S5-S66. |
