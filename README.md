@@ -6,7 +6,8 @@
 3. [SV Callers](./Docs/SVCallers.md)
 4. [SV Evaluators](./Docs/SVEvaluators.md)
 5. [Detailed Running Command](./Docs/Command.md)
-6. [Data Availability](#data-availability)
+6. [MANIFEST.md](#manifest.md)
+7. [Data Availability](#data-availability)
 
 ## Introduction
 
