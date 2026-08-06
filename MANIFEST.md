@@ -13,3 +13,4 @@
 | **Ground truth** | All ground truth datasets are available in Supplementary Table S3. |
 | **Benchmark tool and script** | • Truvari (v5.4.0): https://github.com/ACEnglish/truvari<br>• Minda (v0.0.2): https://github.com/KolmogorovLab/minda<br>*(All evaluation scripts are available in the GitHub repository)* |
 | **Benchmark command** | Detailed running commands are available in Supplementary Note 6 and the GitHub repository. |
+| **Final metric table** | All benchmarking results in this study are detailed in Supplementary Table S5-S69. |
