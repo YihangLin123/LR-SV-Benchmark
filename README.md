@@ -21,7 +21,7 @@ A total of 14 SV detection tools were benchmarked and stratified into three func
 This comprehensive framework provides reliable recommendations for tool selection across diverse research contexts while promising to guide future algorithmic development. The overall evaluation workflow of this study is illustrated in the figure below:
 
 <p align="center">
-  <img src="./Docs/Fig 1.png" alt="Overall Evaluation Workflow" width="80%">
+  <img src="./Docs/Figure 1.png" alt="Overall Evaluation Workflow" width="80%">
 </p>
 
 ## Data Availability
